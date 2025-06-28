@@ -66,25 +66,25 @@ graph LR
    ```
    
 2. **Инициализируйте базу данных Airflow и запустите сервисы:**
-```bash
-airflow db init
-airflow scheduler &
-airflow webserver
-```
+    ```bash
+    airflow db init
+    airflow scheduler &
+    airflow webserver
+    ```
 
 3. **Откройте веб-интерфейс Airflow** по адресу: [http://localhost:8080](http://localhost:8080)
 
 4. **Включите DAG `breast_cancer_pipeline` и запустите его вручную через интерфейс**
-или с помощью CLI:
-```bash
-airflow tasks test breast_cancer_pipeline load_data 2025-06-28
-```
+    *или с помощью CLI:*
+    ```bash
+    airflow tasks test breast_cancer_pipeline load_data 2025-06-28
+    ```
 
 5. **Проверьте результаты в папке `results/`:**
 
-* `model.pkl` — сохранённая модель
+    * `model.pkl` — сохранённая модель
 
-* `metrics.json` — метрики качества модели
+    * `metrics.json` — метрики качества модели
 
 ---
 
