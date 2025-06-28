@@ -5,13 +5,14 @@ import subprocess
 import os
 
 # Укажем пути к скриптам и логам
-BASE_DIR = os.path.dirname(os.path.abspath(__file__)) + '/../etl'
-LOG_DIR = os.path.dirname(os.path.abspath(__file__)) + '/../logs'
+dags_folder = os.path.dirname(os.path.abspath(__file__))
+BASE_DIR = os.path.abspath(os.path.join(dags_folder, '..', 'etl'))
+LOG_DIR = os.path.abspath(os.path.join(dags_folder, '..', 'logs'))
 
 os.makedirs(LOG_DIR, exist_ok=True)
 
 default_args = {
-    'owner': 'student',
+    'owner': 'NatalieGo',
     'start_date': days_ago(1),
     'retries': 1,
     'retry_delay': 300,  # 5 минут
