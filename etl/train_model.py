@@ -44,4 +44,8 @@ if __name__ == "__main__":
     parser.add_argument('--model_path', type=str, default='model.pkl', help="Путь для сохранения обученной модели")
     args = parser.parse_args()
 
-    train_model(args.input_path, args.model_path)
+    try:
+        train_model(args.input_path, args.model_path)
+    except Exception as e:
+        logging.exception("Ошибка при обучении модели:")
+        print("Произошла ошибка при обучении модели. Подробнее см. в логах.")
