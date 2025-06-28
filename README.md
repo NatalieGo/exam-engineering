@@ -78,28 +78,28 @@ graph LR
    ```bash
    source venv/bin/activate
    pip install -r requirements.txt
-Инициализируйте базу данных Airflow и запустите сервисы:
-
-bash
-Копировать
-Редактировать
+   ```
+   
+2. **Инициализируйте базу данных Airflow и запустите сервисы:**
+```bash
 airflow db init
 airflow scheduler &
 airflow webserver
-Откройте веб-интерфейс Airflow по адресу: http://localhost:8080
+```
 
-Включите DAG breast_cancer_pipeline и запустите его вручную через интерфейс
+3. **Откройте веб-интерфейс Airflow** по адресу: [Инструкция по запуску](http://localhost:8080)
+
+4. **Включите DAG `breast_cancer_pipeline` и запустите его вручную через интерфейс**
 или с помощью CLI:
-
-bash
-Копировать
-Редактировать
+```bash
 airflow tasks test breast_cancer_pipeline load_data 2025-06-28
-Проверьте результаты в папке results/:
+```
 
-model.pkl — сохранённая модель
+5. **Проверьте результаты в папке `results/`:**
 
-metrics.json — метрики качества модели
+* `model.pkl` — сохранённая модель
+
+* `metrics.json` — метрики качества модели
 
 ---
 
