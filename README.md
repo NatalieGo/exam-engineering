@@ -1,4 +1,4 @@
-# Breast Cancer Pipeline (Airflow ETL Project)
+# 🧪 Breast Cancer Pipeline (Airflow ETL Project)
 
 ## 🎯 Цель проекта
 
