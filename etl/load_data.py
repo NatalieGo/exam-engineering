@@ -1,7 +1,10 @@
+import argparse
 import pandas as pd
 
+# url с исходными данными
 DATA_URL = 'https://archive.ics.uci.edu/ml/machine-learning-databases/breast-cancer-wisconsin/wdbc.data'
 
+# Имена колонок (в исходном файле отсутствовали)
 COLUMNS = [
     'id', 'diagnosis',
     'radius_mean', 'texture_mean', 'perimeter_mean', 'area_mean', 'smoothness_mean',
@@ -15,12 +18,23 @@ COLUMNS = [
     'concave_points_worst', 'symmetry_worst', 'fractal_dimension_worst'
 ]
 
-def load_and_preview(output_path='breast_cancer_raw.csv'):
+def load_and_preview(output_path):
+    """
+    Загружает данные, выводит информацию о файле: размер и распределение классов,
+    сохраняет в csv по указанному пути.
+    """
     df = pd.read_csv(DATA_URL, header=None, names=COLUMNS)
+
     print("Данные загружены")
     print("Размер датасета:", df.shape)
     print("Распределение классов diagnosis:\n", df['diagnosis'].value_counts())
+
     df.to_csv(output_path, index=False)
     print(f"Сохранено в файл: {output_path}")
 
-load_and_preview()
+if __name__ == "__main__":
+    parser = argparse.ArgumentParser(description="Загрузка данных Breast Cancer Wisconsin Diagnostic")
+    parser.add_argument('--output_path', type=str, default='breast_cancer_raw.csv', help="Куда сохранить файл с данными")
+    args = parser.parse_args()
+
+    load_and_preview(args.output_path)
