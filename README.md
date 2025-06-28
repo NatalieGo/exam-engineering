@@ -152,6 +152,14 @@ airflow_project/
 
 ![image](https://github.com/user-attachments/assets/1182c272-9aa9-42a0-8012-93b55475b6dd)
 
+## Результат работы модели
+{
+    "accuracy": 0.9649122807017544,
+    "precision": 0.975,
+    "recall": 0.9285714285714286,
+    "f1_score": 0.9512195121951219
+}
+
 ---
 
 **Автор:** NatalieGo
