@@ -1,0 +1,8 @@
+Данные загружены
+Размер датасета: (569, 32)
+Распределение классов diagnosis:
+ diagnosis
+B    357
+M    212
+Name: count, dtype: int64
+Сохранено в файл: breast_cancer_raw.csv
