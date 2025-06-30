@@ -208,7 +208,7 @@ __marimo__/
 
 # Исключаем временные папки и результаты 
 data/
-logs/
+#logs/
 results/
 *.pkl
 *.csv
