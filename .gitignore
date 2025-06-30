@@ -210,5 +210,5 @@ __marimo__/
 data/
 logs/
 #results/
-*.pkl
+#*.pkl
 *.csv
